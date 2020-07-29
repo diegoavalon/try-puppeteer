@@ -37,7 +37,7 @@ async function listExamples() {
   });
 }
 
-listExamples(); // Populate when server fires up.
+// listExamples(); // Populate when server fires up.
 
 function setupFileCreationWatcher() {
   // TODO: do more than this to cleanup + prevent malicious deeds.
@@ -252,9 +252,9 @@ app.get('/', (req, res, next) => {
   res.status(200).send('It works!');
 });
 
-app.get('/examples', catchAsyncErrors(async (req, res, next) => {
-  res.status(200).json(await listExamples());
-}));
+// app.get('/examples', catchAsyncErrors(async (req, res, next) => {
+//   res.status(200).json(await listExamples());
+// }));
 
 app.get('/pages', catchAsyncErrors(async (req, res, next) => {
   const browser = app.locals.browser;
